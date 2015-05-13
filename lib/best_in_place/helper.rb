@@ -24,7 +24,7 @@ module BestInPlace
       if opts[:display_as]
         value = value.send(opts[:display_as])
       elsif opts[:display_with]
-        ApplicationController.helpers.send(opts[:display_with], value)
+        value = ApplicationController.helpers.send(opts[:display_with], value)
       end
 
       out = "<span class='best_in_place'"
